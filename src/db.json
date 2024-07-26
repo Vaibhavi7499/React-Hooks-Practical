@@ -1,0 +1,36 @@
+{
+  "emplist": [
+    {
+      "id": "1",
+      "name": "vaibhavi"
+    },
+    {
+      "id": "2",
+      "name": "kishor"
+    }
+  ],
+
+  "studentlist": [
+    {
+      "id": "1",
+      "name": "didi"
+    },
+    {
+      "id": "2",
+      "name": "sama"
+    }
+  ],
+
+"customerlist": [
+    {
+      "id": "1",
+      "name": "Hri",
+      "address":"kanheri"
+    },
+    {
+      "id": "2",
+      "name": "Veer",
+      "address":"latur"
+    }
+  ]
+}
