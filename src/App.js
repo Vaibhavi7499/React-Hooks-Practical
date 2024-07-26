@@ -1,22 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import EmployeeList from './component/EmployeeList';
-import StudentList from './component/StudentList';
-import Layout from './Layout';
-import CustomerList from './component/CustomerList';
+import logo from "./logo.svg";
+import "./App.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import EmployeeList from "./component/EmployeeList";
+import StudentList from "./component/StudentList";
+import Layout from "./Layout";
+import CustomerList from "./component/CustomerList";
+import counterContext from "./ContextAPI/ContextList";
+import { useState } from "react";
+import CounterA from "./ContextAPI/CounterA";
+import CounterB from "./ContextAPI/CounterB";
 
 function App() {
+  let [count, setCount] = useState(0);
+  let obj={
+    count,
+    setCount
+  }
   return (
     <div>
-      <BrowserRouter>
-      <Layout/>
-      <Routes>
-        <Route path='/emplist' element={<EmployeeList/>}/>
-        <Route path='/studentlist' element={<StudentList/>}/>
-        <Route path='/customerlist' element={<CustomerList/>}/>
-      </Routes>
-      </BrowserRouter>
+      <counterContext.Provider value={obj}>
+        <BrowserRouter>
+          <Layout />
+          <Routes>
+            <Route path="/emplist" element={<EmployeeList />} />
+            <Route path="/studentlist" element={<StudentList />} />
+            <Route path="/customerlist" element={<CustomerList />} />
+            <Route path="/countera" element={<CounterA />} />
+            <Route path="/counterb" element={<CounterB/>} />
+          </Routes>
+        </BrowserRouter>
+      </counterContext.Provider>
     </div>
   );
 }

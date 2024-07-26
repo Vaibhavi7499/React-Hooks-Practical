@@ -23,6 +23,16 @@ const Layout = () => {
                   <Link to="/customerlist">Customer List</Link>
                 </a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link">
+                  <Link to="/countera">Counter A</Link>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link">
+                  <Link to="/counterb">Counter B</Link>
+                </a>
+              </li>
              
             </ul>
           </div>
