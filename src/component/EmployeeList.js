@@ -1,21 +1,19 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
 import useFetch from "../customHook/useFetch";
 
 let EmployeeList = () => {
-const [employee] = useFetch("http://localhost:8000/emplist")
+  const [employee, errorMessage] = useFetch("http://localhost:8000/emplist");
 
   //let [employee, setEmpData] = useState([]);
 
-//   function getEmpData() {
-//     axios.get("http://localhost:8000/emplist").then((r) => {
-//       setEmpData(r.data);
-//     });
-//   }
+  //   function getEmpData() {
+  //     axios.get("http://localhost:8000/emplist").then((r) => {
+  //       setEmpData(r.data);
+  //     });
+  //   }
 
-//   useEffect(() => {
-//     getEmpData();
-//   }, []);
+  //   useEffect(() => {
+  //     getEmpData();
+  //   }, []);
 
   return (
     <div>
@@ -24,6 +22,7 @@ const [employee] = useFetch("http://localhost:8000/emplist")
           <li key={e?.id}>{e?.name}</li>
         ))}
       </ul>
+      {errorMessage.length ? <h1>Something Went Wrong</h1> : ""}
     </div>
   );
 };
