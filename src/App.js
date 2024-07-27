@@ -9,6 +9,7 @@ import counterContext from "./ContextAPI/ContextList";
 import { useState } from "react";
 import CounterA from "./ContextAPI/CounterA";
 import CounterB from "./ContextAPI/CounterB";
+import ContactManager from "./ContactManager";
 
 function App() {
   let [count, setCount] = useState(0);
@@ -27,6 +28,7 @@ function App() {
             <Route path="/customerlist" element={<CustomerList />} />
             <Route path="/countera" element={<CounterA />} />
             <Route path="/counterb" element={<CounterB/>} />
+            <Route path="/contactmanager" element={<ContactManager/>} />
           </Routes>
         </BrowserRouter>
       </counterContext.Provider>
