@@ -9,37 +9,36 @@ const Layout = () => {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page">
-                  <Link to="/emplist">Employee List</Link>
-                </a>
+                <Link className="nav-link active" to="/emplist">
+                  Employee List
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link">
-                  <Link to="/studentlist">Student List</Link>
-                </a>
+                <Link className="nav-link" to="/studentlist">
+                  Student List
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link">
-                  <Link to="/customerlist">Customer List</Link>
-                </a>
+                <Link className="nav-link" to="/customerlist">
+                  Customer List
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link">
-                  <Link to="/countera">Counter A</Link>
-                </a>
+                <Link className="nav-link" to="/countera">
+                  Counter A
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link">
-                  <Link to="/counterb">Counter B</Link>
-                </a>
+                <Link className="nav-link" to="/counterb">
+                  Counter B
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link">
-                  <Link to="/contactmanager">Contact Manager</Link>
-                  <Link to="/useReducer">useReducer</Link>
-                </a>
+                  <Link className="nav-link" to="/contactmanager">Contact Manager</Link>
               </li>
-             
+              <li className="nav-item">
+                  <Link className="nav-link" to="/useReducer">useReducer</Link>
+              </li>
             </ul>
           </div>
         </div>
