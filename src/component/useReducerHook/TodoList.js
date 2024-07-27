@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { TODOS_ACTION } from "./Actions";
+import todosContext from "../../ContextAPI/TodoContext";
 
-const TodoList = ({ state: todoList, dispatch }) => {
+const TodoList = () => {
+ const { state: todoList, dispatch } =  useContext(todosContext);
   return (
     <div>
       <ul>
-        {todoList.map((todo) => (
+        {todoList?.map((todo) => (
           <li key={todo?.id} className="mb-2">
             {todo?.name}{" "}
             <button
