@@ -9,6 +9,7 @@ import counterContext from "./ContextAPI/ContextList";
 import { useState } from "react";
 import CounterA from "./ContextAPI/CounterA";
 import CounterB from "./ContextAPI/CounterB";
+import Todo from "./component/useReducerHook/Todo";
 
 function App() {
   let [count, setCount] = useState(0);
@@ -27,6 +28,7 @@ function App() {
             <Route path="/customerlist" element={<CustomerList />} />
             <Route path="/countera" element={<CounterA />} />
             <Route path="/counterb" element={<CounterB/>} />
+            <Route path="/useReducer" element={<Todo/>} />
           </Routes>
         </BrowserRouter>
       </counterContext.Provider>
