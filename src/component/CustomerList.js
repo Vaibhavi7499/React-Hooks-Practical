@@ -6,7 +6,7 @@ const CustomerList = () => {
   return (
     <div>
       <ul>
-        {customer.map((e) => (
+        {customer?.map((e) => (
           <li key={e?.id}>
             {e?.name} {e?.address}
           </li>

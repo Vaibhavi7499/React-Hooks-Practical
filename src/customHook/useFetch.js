@@ -10,6 +10,7 @@ const useFetch = (url) => {
       setData(res.data);
     })
     .catch((err) => {
+      console.log(err)
       setErrorMessage(err.message)
     })
   }

@@ -39,6 +39,9 @@ const Layout = () => {
               <li className="nav-item">
                   <Link className="nav-link" to="/useReducer">useReducer</Link>
               </li>
+              <li className="nav-item">
+                  <Link className="nav-link" to="/todotask">Todo Task</Link>
+              </li>
             </ul>
           </div>
         </div>
