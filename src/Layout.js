@@ -36,6 +36,7 @@ const Layout = () => {
               <li className="nav-item">
                 <a className="nav-link">
                   <Link to="/contactmanager">Contact Manager</Link>
+                  <Link to="/useReducer">useReducer</Link>
                 </a>
               </li>
              
