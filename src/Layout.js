@@ -1,7 +1,10 @@
-import React from "react";
+import React,{useState} from "react";
 import { Link } from "react-router-dom";
 
 const Layout = () => {
+
+  let [isAuthenticated,setAuthenticated] = useState(true);
+
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -40,7 +43,7 @@ const Layout = () => {
                   <Link className="nav-link" to="/useReducer">useReducer</Link>
               </li>
               <li className="nav-item">
-                  <Link className="nav-link" to="/todotask">Todo Task</Link>
+                  {isAuthenticated && <Link className="nav-link" to="/todotask">Todo Task</Link>}
               </li>
             </ul>
           </div>

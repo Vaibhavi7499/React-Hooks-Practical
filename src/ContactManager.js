@@ -9,7 +9,6 @@ const ContactManager = () => {
   });
 
   let [data, setData] = useState([]);
-  let [oldValue,setOldValue] = useState("")
 
   function getInptId(e) {
     setContactInfo({
@@ -32,26 +31,54 @@ const ContactManager = () => {
     });
   }
 
+  function update() {
+    let b = data.map((e) => {
+      if (e?.id === contactInfo.id) {
+        return {
+          ...e,
+          id: contactInfo.id,
+          name: contactInfo.name,
+          email: contactInfo.email,
+        };
+      } else {
+        return e;
+      }
+    });
+    setData(b);
+    clearForm();
+  }
+  console.log(contactInfo);
+
   let addContacts = () => {
-    if (contactInfo.name == "" && contactInfo.email == "") {
+    if (contactInfo.name === "" && contactInfo.email === "") {
       alert("Please enter the id, name , email");
     } else {
-      setData([...data, contactInfo]);
-      setContactInfo({
-        id: "",
-        name: "",
-        email: "",
-        isUpdate: false,
-      });
+      if (contactInfo.isUpdate) {
+        update();
+      } else {
+        {
+          setData([...data, contactInfo]);
+          clearForm();
+        }
+      }
     }
   };
-
   let deleteContact = (id) => {
     let a = data.filter((e) => {
-      return e.id != id;
+      return e.id !== id;
     });
     setData(a);
+    clearForm();
   };
+
+  function clearForm() {
+    setContactInfo({
+      id: "",
+      name: "",
+      email: "",
+      isUpdate: false,
+    });
+  }
 
   let updateContact = (obj) => {
     setContactInfo({
@@ -60,10 +87,8 @@ const ContactManager = () => {
       email: obj.email,
       isUpdate: true,
     });
-    setOldValue(
-        contactInfo)
   };
-console.log(oldValue)
+
   return (
     <div>
       <div>
@@ -74,6 +99,7 @@ console.log(oldValue)
           type="text"
           value={contactInfo.id}
           onChange={(e) => getInptId(e)}
+          disabled={contactInfo.isUpdate}
         />{" "}
         &nbsp; &nbsp;
         <label>Name : </label>

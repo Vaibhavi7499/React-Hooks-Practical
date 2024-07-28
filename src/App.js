@@ -12,8 +12,10 @@ import CounterB from "./ContextAPI/CounterB";
 import ContactManager from "./ContactManager";
 import Todo from "./component/useReducerHook/Todo";
 import TodoTask from "./component/todoTask/TodoTask";
+import UseRefHook from "./UseRefHook";
 
 function App() {
+  
   let [count, setCount] = useState(0);
   let obj={
     count,
@@ -21,7 +23,7 @@ function App() {
   }
   return (
     <div>
-      <counterContext.Provider value={obj}>
+      {/* <counterContext.Provider value={obj}>
         <BrowserRouter>
           <Layout />
           <Routes>
@@ -35,7 +37,8 @@ function App() {
             <Route path="/todotask" element={<TodoTask/>} />
           </Routes>
         </BrowserRouter>
-      </counterContext.Provider>
+      </counterContext.Provider> */}
+      <UseRefHook/>
     </div>
   );
 }
