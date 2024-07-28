@@ -16,6 +16,8 @@ import CounterComp from "./component/CounterComp";
 import { CounterCompA } from "./component/CounterCompA";
 import UseRefHook from "./UseRefHook";
 import SignInForm from "./SignInForm";
+import DtitleA from "./component/DtitleA";
+import DtitleB from "./component/DtitleB";
 
 function App() {
   
@@ -40,6 +42,8 @@ function App() {
             <Route path="/todotask" element={<TodoTask/>} />
             <Route path="/counterComp" element={<CounterComp/>} />
             <Route path="/counterCompA" element={<CounterCompA/>} />
+            <Route path="/dtitlea" element={<DtitleA/>} />
+            <Route path="/dtitleb" element={<DtitleB/>} />
           </Routes>
         </BrowserRouter>
       </counterContext.Provider>

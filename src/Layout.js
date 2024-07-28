@@ -37,7 +37,7 @@ const Layout = () => {
                 </Link>
               </li>
               <li className="nav-item">
-                  <Link className="nav-link" to="/contactmanager">Contact Manager</Link>
+                  <Link className="nav-link" to="/contactmanager">C M</Link>
               </li>
               <li className="nav-item">
                   <Link className="nav-link" to="/useReducer">useReducer</Link>
@@ -46,10 +46,16 @@ const Layout = () => {
                   {isAuthenticated && <Link className="nav-link" to="/todotask">Todo Task</Link>}
               </li>
               <li className="nav-item">
-                  <Link className="nav-link" to="/counterComp">Counter Comp</Link>
+                  <Link className="nav-link" to="/counterComp">CC </Link>
               </li>
               <li className="nav-item">
-                  <Link className="nav-link" to="/counterCompA">Counter Comp A</Link>
+                  <Link className="nav-link" to="/counterCompA">CC A</Link>
+              </li>
+              <li className="nav-item">
+                  <Link className="nav-link" to="/dtitlea">DT A</Link>
+              </li>
+              <li className="nav-item">
+                  <Link className="nav-link" to="/dtitleb">DT B</Link>
               </li>
             </ul>
           </div>
