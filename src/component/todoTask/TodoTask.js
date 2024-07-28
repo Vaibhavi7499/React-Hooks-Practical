@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import TodoTaskList from "./TodoTaskList";
+import TodoTaskHeader from "./TodoTaskHeader";
+import todoTaskContext from "../../ContextAPI/TodoTaskContext";
 
 const TodoTask = () => {
   let [inptValue, setInptValue] = useState("");
@@ -6,6 +9,7 @@ const TodoTask = () => {
   let [isUpdate, setIsUpdate] = useState(false);
   let [id, setId] = useState(null);
 
+ 
   function getInptValue(e) {
     setInptValue(e.target.value);
   }
@@ -38,10 +42,14 @@ const TodoTask = () => {
   }
 
   let addUpdateTodos = () => {
-    if (isUpdate) {
-      updateTodo();
+    if (inptValue == "") {
+      alert("Please enter a value!!!!!");
     } else {
-      addTodo();
+      if (isUpdate) {
+        updateTodo();
+      } else {
+        addTodo();
+      }
     }
   };
 
@@ -60,54 +68,50 @@ const TodoTask = () => {
 
   let resetAll = () => {
     setTodos([]);
+    setIsUpdate(false);
+    setInptValue("");
+  };
+
+  let obj = {
+    todos,
+    deleteTodo,
+    update,
   };
 
   return (
-    <div className="col-md-8 m-auto">
-      <h1> Total Todo's {todos.length} </h1>
-      <label>{isUpdate ? "Update" : "Add"} New Task : </label>
-      <div className="row">
-        <div className="col-md-5">
-          <input
-            className="form-control"
-            type="text"
-            value={inptValue}
-            onChange={(e) => getInptValue(e)}
-          />
+    <todoTaskContext.Provider value={obj}>
+      <div className="col-md-8 m-auto">
+        {/* <TodoTaskHeader todos={todos}></TodoTaskHeader> */}
+        <TodoTaskHeader></TodoTaskHeader>
+        <label>{isUpdate ? "Update" : "Add"} New Task : </label>
+        <div className="row">
+          <div className="col-md-5">
+            <input
+              className="form-control"
+              type="text"
+              value={inptValue}
+              onChange={(e) => getInptValue(e)}
+            />
+          </div>
+          <div className="col-md-3">
+            <button onClick={addUpdateTodos} className="btn btn-primary">
+              {isUpdate ? "Update Todo" : "Add Todo"}
+            </button>
+          </div>
         </div>
-        <div className="col-md-3">
-          <button onClick={addUpdateTodos} className="btn btn-primary">
-            {isUpdate ? "Update Todo" : "Add Todo"}
-          </button>
-        </div>
+        <br />
+        <button className="btn btn-success" onClick={resetAll}>
+          Reset All
+        </button>
+        <hr />
+        {/* <TodoTaskList
+        todos={todos}
+        deleteTodo={deleteTodo}
+        update={update}
+      ></TodoTaskList> */}
+        <TodoTaskList></TodoTaskList>
       </div>
-      <br />
-      <button className="btn btn-success" onClick={resetAll}>
-        Reset All
-      </button>
-      <hr />
-      <ul className="list-group">
-        {todos?.map((ele) => (
-          <li
-            key={ele?.id}
-            className="list-group-item d-flex justify-content-between align-items-center"
-          >
-            {ele?.name}{" "}
-            <span>
-              <button className="btn btn-secondary" onClick={() => update(ele)}>
-                update
-              </button>{" "}
-              <button
-                className="btn btn-danger"
-                onClick={() => deleteTodo(ele?.id)}
-              >
-                delete
-              </button>
-            </span>
-          </li>
-        ))}
-      </ul>
-    </div>
+    </todoTaskContext.Provider>
   );
 };
 
