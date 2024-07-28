@@ -13,6 +13,7 @@ import ContactManager from "./ContactManager";
 import Todo from "./component/useReducerHook/Todo";
 import TodoTask from "./component/todoTask/TodoTask";
 import UseRefHook from "./UseRefHook";
+import SignInForm from "./SignInForm";
 
 function App() {
   
@@ -23,7 +24,7 @@ function App() {
   }
   return (
     <div>
-      {/* <counterContext.Provider value={obj}>
+      <counterContext.Provider value={obj}>
         <BrowserRouter>
           <Layout />
           <Routes>
@@ -37,8 +38,9 @@ function App() {
             <Route path="/todotask" element={<TodoTask/>} />
           </Routes>
         </BrowserRouter>
-      </counterContext.Provider> */}
-      <UseRefHook/>
+      </counterContext.Provider>
+      {/* <UseRefHook/> */}
+      {/* <SignInForm/> */}
     </div>
   );
 }
