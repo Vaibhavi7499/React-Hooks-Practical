@@ -42,6 +42,12 @@ const Layout = () => {
               <li className="nav-item">
                   <Link className="nav-link" to="/todotask">Todo Task</Link>
               </li>
+              <li className="nav-item">
+                  <Link className="nav-link" to="/counterComp">Counter Comp</Link>
+              </li>
+              <li className="nav-item">
+                  <Link className="nav-link" to="/counterCompA">Counter Comp A</Link>
+              </li>
             </ul>
           </div>
         </div>

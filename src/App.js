@@ -12,6 +12,8 @@ import CounterB from "./ContextAPI/CounterB";
 import ContactManager from "./ContactManager";
 import Todo from "./component/useReducerHook/Todo";
 import TodoTask from "./component/todoTask/TodoTask";
+import CounterComp from "./component/CounterComp";
+import { CounterCompA } from "./component/CounterCompA";
 
 function App() {
   let [count, setCount] = useState(0);
@@ -33,6 +35,8 @@ function App() {
             <Route path="/contactmanager" element={<ContactManager/>} />
             <Route path="/useReducer" element={<Todo/>} />
             <Route path="/todotask" element={<TodoTask/>} />
+            <Route path="/counterComp" element={<CounterComp/>} />
+            <Route path="/counterCompA" element={<CounterCompA/>} />
           </Routes>
         </BrowserRouter>
       </counterContext.Provider>
