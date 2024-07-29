@@ -1,5 +1,5 @@
 import React, { useReducer, useState } from "react";
-
+import { actionTypes } from "./ActionTypes";
 const AddFruits = () => {
   let initialValue = [];
   let [fruitTodo, dispatch] = useReducer(reducer, initialValue);
@@ -7,11 +7,11 @@ const AddFruits = () => {
   let [id, setId] = useState("");
 
   function reducer(state, action) {
-    if (action.type === "ADD_TODO" && action.payload === "") {
+    if (action.type === actionTypes.ADD_TODO && action.payload === "") {
       alert("Please enter the Fruit !!!");
     } else {
       switch (action.type) {
-        case "ADD_TODO":
+        case actionTypes.ADD_TODO:
           return [
             ...state,
             {
@@ -20,13 +20,13 @@ const AddFruits = () => {
             },
           ];
 
-        case "RESET_TODO":
+        case actionTypes.RESET_TODOS:
           return (state = []);
 
-        case "DEL_TODO":
+        case actionTypes.DELETE_TODO:
           return state.filter((e) => e?.id !== action?.payload);
 
-        case "UPDATE_TODO":
+        case actionTypes.UPDATE_TODO:
           return state.map((e) => {
             if (e?.id === action?.payload?.id) {
               return {
@@ -45,21 +45,21 @@ const AddFruits = () => {
   }
   let addUpdateTodo = () => {
     if (id) {
-      dispatch({ type: "UPDATE_TODO", payload: { id: id, name: inptValue } });
+      dispatch({ type: actionTypes.UPDATE_TODO, payload: { id: id, name: inptValue } });
       setId("");
     } else {
-      dispatch({ type: "ADD_TODO", payload: inptValue });
+      dispatch({ type: actionTypes.ADD_TODO, payload: inptValue });
     }
     setInptValue("");
   };
 
   let resetTodo = () => {
-    dispatch({ type: "RESET_TODO" });
+    dispatch({ type: actionTypes.RESET_TODOS});
     setInptValue("");
   };
 
   let deleteTodo = (id) => {
-    dispatch({ type: "DEL_TODO", payload: id });
+    dispatch({ type: actionTypes.DELETE_TODO, payload: id });
   };
 
   let updateTodo = (obj) => {
