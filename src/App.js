@@ -18,6 +18,7 @@ import UseRefHook from "./UseRefHook";
 import SignInForm from "./SignInForm";
 import DtitleA from "./component/DtitleA";
 import DtitleB from "./component/DtitleB";
+import AddFruits from "./component/Pract-useReducer/AddFruits";
 
 function App() {
   
@@ -44,6 +45,7 @@ function App() {
             <Route path="/counterCompA" element={<CounterCompA/>} />
             <Route path="/dtitlea" element={<DtitleA/>} />
             <Route path="/dtitleb" element={<DtitleB/>} />
+            <Route path="/fruitstodo" element={<AddFruits/>} />
           </Routes>
         </BrowserRouter>
       </counterContext.Provider>

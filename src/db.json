@@ -1,15 +1,10 @@
 {
   "emplist": [
     {
-      "id": "1",
-      "name": "vaibhavi"
-    },
-    {
       "id": "2",
       "name": "kishor"
     }
   ],
-
   "studentlist": [
     {
       "id": "1",
@@ -20,17 +15,16 @@
       "name": "sama"
     }
   ],
-
-"customerlist": [
+  "customerlist": [
     {
       "id": "1",
       "name": "Hri",
-      "address":"kanheri"
+      "address": "kanheri"
     },
     {
       "id": "2",
       "name": "Veer",
-      "address":"latur"
+      "address": "latur"
     }
   ]
 }
