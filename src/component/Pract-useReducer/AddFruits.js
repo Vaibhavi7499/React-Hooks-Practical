@@ -7,9 +7,14 @@ const AddFruits = () => {
   let [id, setId] = useState("");
 
   function reducer(state, action) {
-    if (action.type === actionTypes.ADD_TODO && action.payload === "") {
-      alert("Please enter the Fruit !!!");
-    } else {
+    if (
+      (action.type === actionTypes.ADD_TODO ||
+        action.type === actionTypes.UPDATE_TODO) &&
+      (action?.payload === "" || action?.payload?.name === "")
+    ) {
+     return alert("Please enter the Fruit !!!");
+    } 
+    else {
       switch (action.type) {
         case actionTypes.ADD_TODO:
           return [
@@ -45,16 +50,19 @@ const AddFruits = () => {
   }
   let addUpdateTodo = () => {
     if (id) {
-      dispatch({ type: actionTypes.UPDATE_TODO, payload: { id: id, name: inptValue } });
+      dispatch({
+        type: actionTypes.UPDATE_TODO,
+        payload: { id: id, name: inptValue },
+      });
       setId("");
     } else {
       dispatch({ type: actionTypes.ADD_TODO, payload: inptValue });
+      setInptValue("");
     }
-    setInptValue("");
   };
 
   let resetTodo = () => {
-    dispatch({ type: actionTypes.RESET_TODOS});
+    dispatch({ type: actionTypes.RESET_TODOS });
     setInptValue("");
   };
 
