@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
+import fruitContext from "../../ContextAPI/FruitContext";
 
-function FruitHeader({fruitTodo}){
-    return(
-<>
-<h1>Total Fruits {fruitTodo?.length}</h1>
-</>
-    )
+function FruitHeader() {
+  let { fruitTodo } = useContext(fruitContext);
+
+  return (
+    <>
+      <h1>Total Fruits {fruitTodo?.length}</h1>
+    </>
+  );
 }
 
 export default FruitHeader;

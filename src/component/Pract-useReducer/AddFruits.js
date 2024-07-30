@@ -2,6 +2,7 @@ import React, { useReducer, useState } from "react";
 import { actionTypes } from "./ActionTypes";
 import AddFruitList from "./AddFruitList";
 import FruitHeader from "./FruitHeader";
+import fruitContext from "../../ContextAPI/FruitContext";
 
 const AddFruits = () => {
   let initialValue = [];
@@ -15,9 +16,8 @@ const AddFruits = () => {
         action.type === actionTypes.UPDATE_TODO) &&
       (action?.payload === "" || action?.payload?.name === "")
     ) {
-     return alert("Please enter the Fruit !!!");
-    } 
-    else {
+      return alert("Please enter the Fruit !!!");
+    } else {
       switch (action.type) {
         case actionTypes.ADD_TODO:
           return [
@@ -79,33 +79,41 @@ const AddFruits = () => {
     setId(obj?.id);
   };
 
+  let obj = {
+    fruitTodo,
+    deleteTodo,
+    updateTodo,
+  };
+
   return (
-    <div className="col-md-8 m-auto">
-      <FruitHeader fruitTodo={fruitTodo}></FruitHeader>
-      <label>{id ? "Update" : "Add"} Fruits:</label>
-      <div className="row">
-        <div className="col-md-5">
-          <input
-            type="text"
-            className="form-control"
-            value={inptValue}
-            onChange={(e) => setInptValue(e.target.value)}
-          />
+    <fruitContext.Provider value={obj}>
+      <div className="col-md-8 m-auto">
+        <FruitHeader></FruitHeader>
+        <label>{id ? "Update" : "Add"} Fruits:</label>
+        <div className="row">
+          <div className="col-md-5">
+            <input
+              type="text"
+              className="form-control"
+              value={inptValue}
+              onChange={(e) => setInptValue(e.target.value)}
+            />
+          </div>
+          <div className="col-md-3">
+            <button className="btn btn-primary" onClick={addUpdateTodo}>
+              {id ? "Update" : "Add"} Todo
+            </button>
+          </div>
         </div>
-        <div className="col-md-3">
-          <button className="btn btn-primary" onClick={addUpdateTodo}>
-            {id ? "Update" : "Add"} Todo
-          </button>
+        <button className="btn btn-success mt-3" onClick={resetTodo}>
+          Reset All
+        </button>
+        <hr />
+        <div>
+          <AddFruitList></AddFruitList>
         </div>
       </div>
-      <button className="btn btn-success mt-3" onClick={resetTodo}>
-        Reset All
-      </button>
-      <hr />
-      <div>
-       <AddFruitList fruitTodo={fruitTodo} deleteTodo={deleteTodo} updateTodo={updateTodo}></AddFruitList>
-      </div>
-    </div>
+    </fruitContext.Provider>
   );
 };
 
