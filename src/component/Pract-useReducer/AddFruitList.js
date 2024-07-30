@@ -1,37 +1,37 @@
-import React from "react";
+import React, { useContext } from "react";
+import fruitContext from "../../ContextAPI/FruitContext";
 
-function AddFruitList({fruitTodo,deleteTodo,updateTodo}){
-return(
+function AddFruitList() {
+  let { fruitTodo, deleteTodo, updateTodo } = useContext(fruitContext);
+
+  return (
     <>
-     <ul className="list-group">
-          {fruitTodo?.length == 0 ? (
-            <h4>TODO is empty</h4>
-          ) : (
-            fruitTodo?.map((e) => (
-              <li
-                key={e?.id}
-                className="list-group-item d-flex justify-content-between align-items-center"
-              >
-                {e?.name}
-                <span>
-                  <button
-                    className="btn btn-info"
-                    onClick={() => updateTodo(e)}
-                  >
-                    update
-                  </button>{" "}
-                  <button
-                    className="btn btn-danger"
-                    onClick={() => deleteTodo(e?.id)}
-                  >
-                    delete
-                  </button>
-                </span>
-              </li>
-            ))
-          )}
-        </ul>
+      <ul className="list-group">
+        {fruitTodo?.length == 0 ? (
+          <h4>TODO is empty</h4>
+        ) : (
+          fruitTodo?.map((e) => (
+            <li
+              key={e?.id}
+              className="list-group-item d-flex justify-content-between align-items-center"
+            >
+              {e?.name}
+              <span>
+                <button className="btn btn-info" onClick={() => updateTodo(e)}>
+                  update
+                </button>{" "}
+                <button
+                  className="btn btn-danger"
+                  onClick={() => deleteTodo(e?.id)}
+                >
+                  delete
+                </button>
+              </span>
+            </li>
+          ))
+        )}
+      </ul>
     </>
-)
+  );
 }
 export default AddFruitList;
