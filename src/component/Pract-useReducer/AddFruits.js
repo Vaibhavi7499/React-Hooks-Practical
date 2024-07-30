@@ -1,5 +1,8 @@
 import React, { useReducer, useState } from "react";
 import { actionTypes } from "./ActionTypes";
+import AddFruitList from "./AddFruitList";
+import FruitHeader from "./FruitHeader";
+
 const AddFruits = () => {
   let initialValue = [];
   let [fruitTodo, dispatch] = useReducer(reducer, initialValue);
@@ -54,6 +57,7 @@ const AddFruits = () => {
         type: actionTypes.UPDATE_TODO,
         payload: { id: id, name: inptValue },
       });
+      setInptValue("");
       setId("");
     } else {
       dispatch({ type: actionTypes.ADD_TODO, payload: inptValue });
@@ -77,7 +81,7 @@ const AddFruits = () => {
 
   return (
     <div className="col-md-8 m-auto">
-      <h1>Total Fruits {fruitTodo?.length}</h1>
+      <FruitHeader fruitTodo={fruitTodo}></FruitHeader>
       <label>{id ? "Update" : "Add"} Fruits:</label>
       <div className="row">
         <div className="col-md-5">
@@ -99,34 +103,7 @@ const AddFruits = () => {
       </button>
       <hr />
       <div>
-        <ul className="list-group">
-          {fruitTodo?.length == 0 ? (
-            <h4>TODO is empty</h4>
-          ) : (
-            fruitTodo?.map((e) => (
-              <li
-                key={e?.id}
-                className="list-group-item d-flex justify-content-between align-items-center"
-              >
-                {e?.name}
-                <span>
-                  <button
-                    className="btn btn-info"
-                    onClick={() => updateTodo(e)}
-                  >
-                    update
-                  </button>{" "}
-                  <button
-                    className="btn btn-danger"
-                    onClick={() => deleteTodo(e?.id)}
-                  >
-                    delete
-                  </button>
-                </span>
-              </li>
-            ))
-          )}
-        </ul>
+       <AddFruitList fruitTodo={fruitTodo} deleteTodo={deleteTodo} updateTodo={updateTodo}></AddFruitList>
       </div>
     </div>
   );
