@@ -60,6 +60,15 @@ const Layout = () => {
               <li className="nav-item">
                   <Link className="nav-link" to="/fruitstodo">Fruit TODO</Link>
               </li>
+              <li className="nav-item">
+                  <Link className="nav-link" to="/shoppingapp">ShoppingApp</Link>
+              </li>
+              <li className="nav-item">
+                  <Link className="nav-link" to="/myorders">Myorders</Link>
+              </li>
+              <li className="nav-item">
+                  <Link className="nav-link" to="/expensetracker">Expense Tracker</Link>
+              </li>
             </ul>
           </div>
         </div>
