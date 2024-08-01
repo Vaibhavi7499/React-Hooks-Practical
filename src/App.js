@@ -33,7 +33,7 @@ function App() {
   }
   return (
     <div>
-      {/* <counterContext.Provider value={obj}>
+      <counterContext.Provider value={obj}>
         <BrowserRouter>
           <Layout />
           <Routes>
@@ -55,8 +55,8 @@ function App() {
             <Route path="/expensetracker" element={<ExpenseTracker/>} />
           </Routes>
         </BrowserRouter>
-      </counterContext.Provider> */}
-      <UseRefHook/>
+      </counterContext.Provider>
+      {/* <UseRefHook/> */}
       {/* <SignInForm/> */}
       {/* <PractUseRefHook></PractUseRefHook> */}
     </div>
