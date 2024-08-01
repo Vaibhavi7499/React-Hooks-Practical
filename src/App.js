@@ -19,6 +19,10 @@ import SignInForm from "./SignInForm";
 import DtitleA from "./component/DtitleA";
 import DtitleB from "./component/DtitleB";
 import AddFruits from "./component/Pract-useReducer/AddFruits";
+import ShoppingApps from "./component/Pract-useReducer/Shopping/ShoppingApps";
+import Myorders from "./component/Pract-useReducer/Shopping/Myorders";
+import PractUseRefHook from "./PractUseRefHook";
+import ExpenseTracker from "./component/Pract-useReducer/ExpenseTracker/ExpenseTracker";
 
 function App() {
   
@@ -46,11 +50,15 @@ function App() {
             <Route path="/dtitlea" element={<DtitleA/>} />
             <Route path="/dtitleb" element={<DtitleB/>} />
             <Route path="/fruitstodo" element={<AddFruits/>} />
+            <Route path="/shoppingapp" element={<ShoppingApps/>} />
+            <Route path="/myorders" element={<Myorders/>} />
+            <Route path="/expensetracker" element={<ExpenseTracker/>} />
           </Routes>
         </BrowserRouter>
       </counterContext.Provider>
       {/* <UseRefHook/> */}
       {/* <SignInForm/> */}
+      {/* <PractUseRefHook></PractUseRefHook> */}
     </div>
   );
 }
