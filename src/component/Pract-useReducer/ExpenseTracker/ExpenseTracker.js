@@ -27,8 +27,6 @@ const ExpenseTracker = () => {
         return (state = []);
 
       case actionTypes.UPDATE_EXPENSE:
-        console.log(state)
-        console.log(action)
         return state.map((e) => {
           if (e?.id === action?.payload?.id) {
             return {
@@ -79,11 +77,11 @@ const ExpenseTracker = () => {
     setId(obj?.id);
   };
 
-  let obj ={
+  let obj = {
     expense,
     deleteExpense,
-    updateExpense
-  }
+    updateExpense,
+  };
   return (
     <expenseContext.Provider value={obj}>
       <div className="col-md-8 m-auto">
