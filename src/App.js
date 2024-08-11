@@ -24,6 +24,7 @@ import Myorders from "./component/Pract-useReducer/Shopping/Myorders";
 import PractUseRefHook from "./PractUseRefHook";
 import ExpenseTracker from "./component/Pract-useReducer/ExpenseTracker/ExpenseTracker";
 import Usememo from "./Usememo";
+import ParentC from "./memo/ParentC";
 
 function App() {
   
@@ -55,6 +56,7 @@ function App() {
             <Route path="/myorders" element={<Myorders/>} />
             <Route path="/expensetracker" element={<ExpenseTracker/>} />
             <Route path="/usememo" element={<Usememo/>} />
+            <Route path="/parentc" element={<ParentC/>} />
           </Routes>
         </BrowserRouter>
       </counterContext.Provider>
