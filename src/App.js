@@ -23,6 +23,7 @@ import ShoppingApps from "./component/Pract-useReducer/Shopping/ShoppingApps";
 import Myorders from "./component/Pract-useReducer/Shopping/Myorders";
 import PractUseRefHook from "./PractUseRefHook";
 import ExpenseTracker from "./component/Pract-useReducer/ExpenseTracker/ExpenseTracker";
+import Usememo from "./Usememo";
 
 function App() {
   
@@ -53,6 +54,7 @@ function App() {
             <Route path="/shoppingapp" element={<ShoppingApps/>} />
             <Route path="/myorders" element={<Myorders/>} />
             <Route path="/expensetracker" element={<ExpenseTracker/>} />
+            <Route path="/usememo" element={<Usememo/>} />
           </Routes>
         </BrowserRouter>
       </counterContext.Provider>
