@@ -25,17 +25,17 @@ import PractUseRefHook from "./PractUseRefHook";
 import ExpenseTracker from "./component/Pract-useReducer/ExpenseTracker/ExpenseTracker";
 import Usememo from "./Usememo";
 import ParentC from "./memo/ParentC";
+import UsememoPractiseEx from "./UsememoPractiseEx";
 
 function App() {
-  
   let [count, setCount] = useState(0);
-  let obj={
+  let obj = {
     count,
-    setCount
-  }
+    setCount,
+  };
   return (
     <div>
-      <counterContext.Provider value={obj}>
+      {/* <counterContext.Provider value={obj}>
         <BrowserRouter>
           <Layout />
           <Routes>
@@ -59,10 +59,11 @@ function App() {
             <Route path="/parentc" element={<ParentC/>} />
           </Routes>
         </BrowserRouter>
-      </counterContext.Provider>
+      </counterContext.Provider> */}
       {/* <UseRefHook/> */}
       {/* <SignInForm/> */}
       {/* <PractUseRefHook></PractUseRefHook> */}
+      <UsememoPractiseEx></UsememoPractiseEx>
     </div>
   );
 }
