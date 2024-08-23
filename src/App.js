@@ -26,6 +26,7 @@ import ExpenseTracker from "./component/Pract-useReducer/ExpenseTracker/ExpenseT
 import Usememo from "./Usememo";
 import ParentC from "./memo/ParentC";
 import UsememoPractiseEx from "./UsememoPractiseEx";
+import TodoExamplePract from "./TodoExamplePract";
 
 function App() {
   let [count, setCount] = useState(0);
@@ -63,8 +64,9 @@ function App() {
       {/* <UseRefHook/> */}
       {/* <SignInForm/> */}
       {/* <PractUseRefHook></PractUseRefHook> */}
-      <UsememoPractiseEx></UsememoPractiseEx>
-    </div>
+      {/* <UsememoPractiseEx></UsememoPractiseEx> */}
+      <TodoExamplePract/>
+            </div>
   );
 }
 
