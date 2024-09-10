@@ -27,6 +27,7 @@ import Usememo from "./Usememo";
 import ParentC from "./memo/ParentC";
 import UsememoPractiseEx from "./UsememoPractiseEx";
 import TodoExamplePract from "./TodoExamplePract";
+import Counter from "./Counter/Counter";
 
 function App() {
   let [count, setCount] = useState(0);
@@ -65,7 +66,8 @@ function App() {
       {/* <SignInForm/> */}
       {/* <PractUseRefHook></PractUseRefHook> */}
       {/* <UsememoPractiseEx></UsememoPractiseEx> */}
-      <TodoExamplePract/>
+      {/* <TodoExamplePract/> */}
+      <Counter/>
             </div>
   );
 }
