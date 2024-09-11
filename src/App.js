@@ -28,6 +28,7 @@ import ParentC from "./memo/ParentC";
 import UsememoPractiseEx from "./UsememoPractiseEx";
 import TodoExamplePract from "./TodoExamplePract";
 import Counter from "./Counter/Counter";
+import ExpenseList from "./Counter/ExpenseList";
 
 function App() {
   let [count, setCount] = useState(0);
@@ -68,6 +69,7 @@ function App() {
       {/* <UsememoPractiseEx></UsememoPractiseEx> */}
       {/* <TodoExamplePract/> */}
       <Counter/>
+      <ExpenseList/>
             </div>
   );
 }

@@ -6,13 +6,16 @@ import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Provider } from "react-redux";
 import store from "./Store/Store";
+import expenseStore from "./Store/ExpenseStore";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   //<React.StrictMode>
-  <Provider store={store}>
+  // <Provider store={store}>
+  <Provider store={expenseStore}>
     <App />
-  </Provider>
+    </Provider>
+  // </Provider>
   //</React.StrictMode>
 );
 
