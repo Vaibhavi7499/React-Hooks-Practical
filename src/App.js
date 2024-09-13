@@ -30,6 +30,7 @@ import TodoExamplePract from "./TodoExamplePract";
 import Counter from "./Counter/Counter";
 import ExpenseList from "./Counter/ExpenseList";
 import Calculator from "./Calculator/Calculator";
+import Parent from "./Parent";
 
 function App() {
   let [count, setCount] = useState(0);
@@ -69,9 +70,10 @@ function App() {
       {/* <PractUseRefHook></PractUseRefHook> */}
       {/* <UsememoPractiseEx></UsememoPractiseEx> */}
       {/* <TodoExamplePract/> */}
-      <Counter/>
-      <ExpenseList/>
-      <Calculator/>
+      {/* <Counter/> */}
+      {/* <ExpenseList/> */}
+      {/* <Calculator/> */}
+<Parent/>
             </div>
   );
 }
