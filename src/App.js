@@ -29,6 +29,7 @@ import UsememoPractiseEx from "./UsememoPractiseEx";
 import TodoExamplePract from "./TodoExamplePract";
 import Counter from "./Counter/Counter";
 import ExpenseList from "./Counter/ExpenseList";
+import Calculator from "./Calculator/Calculator";
 
 function App() {
   let [count, setCount] = useState(0);
@@ -70,6 +71,7 @@ function App() {
       {/* <TodoExamplePract/> */}
       <Counter/>
       <ExpenseList/>
+      <Calculator/>
             </div>
   );
 }
