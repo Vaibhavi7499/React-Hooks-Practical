@@ -31,6 +31,7 @@ import Counter from "./Counter/Counter";
 import ExpenseList from "./Counter/ExpenseList";
 import Calculator from "./Calculator/Calculator";
 import Parent from "./Parent";
+import ParentState from "./StateLifting/Parent";
 
 function App() {
   let [count, setCount] = useState(0);
@@ -73,7 +74,8 @@ function App() {
       {/* <Counter/> */}
       {/* <ExpenseList/> */}
       {/* <Calculator/> */}
-<Parent/>
+{/* <Parent/> */}
+<ParentState/>
             </div>
   );
 }
